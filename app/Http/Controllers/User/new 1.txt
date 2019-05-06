@@ -1,0 +1,8 @@
+ALTER TABLE news_categories
+ADD COLUMN `name_en` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+ADD COLUMN `description_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+ADD COLUMN `meta_title_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+ADD COLUMN `meta_keywords_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+ADD COLUMN `meta_description_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL;
+
+ALTER TABLE news ADD COLUMN `en_short_description` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL, ADD COLUMN `meta_keywords_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL, ADD COLUMN `meta_title_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL, ADD COLUMN `title_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL, ADD COLUMN `content_en` mediumtext COLLATE utf8_unicode_ci NOT NULL, ADD COLUMN `meta_description_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL

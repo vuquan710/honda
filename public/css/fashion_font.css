@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+body {
+    font-family:  sans-serif,'Open Sans Condensed';
+    font-size: 16px;
+    background: #C7E4EF;
+}
+body.admin-layout, h1, h2, h3, h4{
+    font-family: 'Fira Sans', sans-serif;
+}
+body.admin-layout{
+    font-size: 13px;
+}
