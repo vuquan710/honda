@@ -13,7 +13,7 @@ class User extends AppModel
 {
     protected $table = 'users';
     protected $fillable = [
-        'alias', 'first_name', 'last_name', 'full_name', 'email', 'password', 'status', 'photo', 'phone_number', 'address', 'description', 'last_access_at', 'remember_token', 'reset_password_token', 'reset_password_token_expired'
+        'alias', 'first_name', 'last_name', 'full_name', 'email', 'password', 'status', 'photo', 'phone_number', 'address', 'description', 'last_access_at', 'remember_token', 'city','reset_password_token', 'reset_password_token_expired'
     ];
     protected $hidden = [
         'password', 'remember_token', 'reset_password_token', 'reset_password_token_expired'
@@ -31,7 +31,18 @@ class User extends AppModel
 
     protected static function getListUsers($limit = 10, $page = 1)
     {
-        $listUser = self::paginate($limit, ['*'], 'page', $page);
+        $listUser = self::leftJoin('cities','users.city','=','cities.vehicle_id')->paginate($limit, ['*'], 'page', $page);
         return $listUser;
+    }
+
+
+    public static function IsUserNameExist($username)
+    {
+        $staff = self::where('email', $username)
+            ->first();
+        if (empty($staff)) {
+            return false;
+        }
+        return true;
     }
 }

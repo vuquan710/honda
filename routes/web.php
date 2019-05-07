@@ -92,48 +92,48 @@
 //        ]);
 //    });
 
-Route::middleware(['UserMiddleware'])
-    // ->prefix('v3')
+//Route::middleware(['UserMiddleware'])
+// ->prefix('v3')
 //    ->domain(env('DOMAIN_USER', 'fashion-dev.com'))
-    ->namespace('UserV3')
-    ->group(function () {
-
-        Route::resource('/', 'HomesController', [
-            'names' => [
-                'index' => 'user.v3.homes.index',
-
-            ]
-        ]);
-        Route::get('contact-us', 'HomesController@contactUs')->name('user.v3.homes.contactUs');
-        Route::get('about-us', 'HomesController@aboutUs')->name('user.v3.homes.aboutUs');
+//    ->namespace('UserV3')
+//    ->group(function () {
+//
+//        Route::resource('/', 'HomesController', [
+//            'names' => [
+//                'index' => 'user.v3.homes.index',
+//
+//            ]
+//        ]);
+//        Route::get('contact-us', 'HomesController@contactUs')->name('user.v3.homes.contactUs');
+//        Route::get('about-us', 'HomesController@aboutUs')->name('user.v3.homes.aboutUs');
 //        Route::post('lien-he', 'HomesController@postSaveContact')->name('user.v2.homes.saveContact');
 //        Route::post('tim-kiem-san-pham', 'HomesController@search')->name('user.v2.homes.search');
 //        Route::get('ket-qua-tim-kiem', 'HomesController@show')->name('user.v2.homes.show');
-        Route::resource('products', 'ProductsController', [
-            'names' => [
-                'index' => 'user.v3.products.index',
-                'show' => 'user.v3.products.show'
-            ]
-        ]);
+//        Route::resource('products', 'ProductsController', [
+//            'names' => [
+//                'index' => 'user.v3.products.index',
+//                'show' => 'user.v3.products.show'
+//            ]
+//        ]);
 //
-        Route::resource('categories', 'CategoriesController', [
-            'names' => [
-                'index' => 'user.v3.categories.index',
-                'show' => 'user.v3.categories.show'
-            ]
-        ]);
-        Route::resource('news-category', 'NewsCategoryController', [
-            'names' => [
-                'index' => 'user.v3.newsCategories.index',
-                'show' => 'user.v3.newsCategories.show'
-            ]
-        ]);
-        Route::resource('news', 'NewsController', [
-            'names' => [
-                'show' => 'user.v3.news.show',
-            ]
-        ]);
-    });
+//        Route::resource('categories', 'CategoriesController', [
+//            'names' => [
+//                'index' => 'user.v3.categories.index',
+//                'show' => 'user.v3.categories.show'
+//            ]
+//        ]);
+//        Route::resource('news-category', 'NewsCategoryController', [
+//            'names' => [
+//                'index' => 'user.v3.newsCategories.index',
+//                'show' => 'user.v3.newsCategories.show'
+//            ]
+//        ]);
+//        Route::resource('news', 'NewsController', [
+//            'names' => [
+//                'show' => 'user.v3.news.show',
+//            ]
+//        ]);
+//    });
 
 
 //BackEnd route
@@ -160,6 +160,11 @@ Route::prefix('admin')
                     'names' => [
                         'index' => 'admin.users.index',
                         'show' => 'admin.users.show',
+                        'create' => 'admin.users.create',
+                        'store' => 'admin.users.store',
+                        'destroy' => 'admin.users.destroy',
+                        'edit' => 'admin.users.edit',
+                        'update' => 'admin.users.update'
                     ]
                 ]);
                 Route::resource('staffs', 'StaffsController', [
@@ -255,3 +260,23 @@ Route::prefix('admin')
 
     });
 //End BackEnd route
+
+
+//Front-end
+Route::prefix('/')
+//    ->domain(env('DOMAIN_ADMIN', 'admin.fashion-dev.com'))
+    ->namespace('Honda')
+    ->group(function () {
+        Route::get('/', function () {
+            return redirect()->route('user.auth.login');
+        });
+        Route::match(['get', 'post'], 'login', ['as' => 'user.auth.login', 'uses' => 'AuthController@login']);
+        Route::middleware(['UserMiddleware'])
+            ->group(function () {
+                Route::resource('homes', 'HomesController', [
+                    'names' => [
+                        'index' => 'user.homes.index'
+                    ]
+                ]);
+            });
+    });

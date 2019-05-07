@@ -17,6 +17,7 @@ function displayTarget($this) {
 function confirmDeleteData(e, message) {
     message = message || $.i18n._('Do_you_want_delete_data?');
     var url = $(e).attr('data-url');
+
     var deleteData = function () {
         var postAjax = $.ajax({type: 'DELETE', url: url, data: {}});
         postAjax.done(function (result) {

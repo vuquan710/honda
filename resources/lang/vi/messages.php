@@ -157,5 +157,6 @@ return [
     'UserV3'=>[
         'trang_chu'=>'Trang Chủ',
         'san_pham'=>'Sản Phẩm'
-    ]
+    ],
+    'City'=>'Thành Phố'
 ];

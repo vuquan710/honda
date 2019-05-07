@@ -50,10 +50,10 @@
                                     </span>
                                 </a>
                             </div>
-							<div class="pull-right margin-left-10" >
-                            <a href="{{route('admin.staffs.create')}}"
-                               class="btn btn-success btn-sm">{{__('messages.Add')}}</a>
-                        </div>
+                            <div class="pull-right margin-left-10" >
+                                <a href="{{route('admin.staffs.create')}}"
+                                   class="btn btn-success btn-sm">{{__('messages.Add')}}</a>
+                            </div>
                         </div>
 						
                         <div class="pull-left">

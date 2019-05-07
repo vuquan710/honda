@@ -49,6 +49,10 @@
                                     </span>
                                 </a>
                             </div>
+                            <div class="pull-right margin-left-10" >
+                                <a href="{{route('admin.users.create')}}"
+                                   class="btn btn-success btn-sm">{{__('messages.Add')}}</a>
+                            </div>
                         </div>
                         <div class="pull-left">
                             @include('AdminView.Share.limit_default', ['paginator'=>$listUsers, 'listOption' => \App\Http\Controllers\Admin\AdminAppController::$listOptionPaginate])
@@ -65,12 +69,12 @@
                                         </label>
                                     </th>
                                     <th class="">#</th>
-                                    <th class="">{{__('messages.Full_name')}}</th>
+                                    {{--<th class="">{{__('messages.Full_name')}}</th>--}}
                                     <th>Email</th>
                                     <th class="">{{__('messages.Phone_number')}}</th>
-                                    <th class="">{{__('messages.Address')}}</th>
-                                    <th class="">{{__('messages.Status')}}</th>
-                                    <th width="1%"></th>
+                                    {{--<th class="">{{__('messages.Address')}}</th>--}}
+                                    <th class="">{{__('messages.City')}}</th>
+                                    <th width="60px"></th>
                                 </tr>
                                 </thead>
 
@@ -85,16 +89,15 @@
                                                 </label>
                                             </td>
                                             <td>{{ ($key+1)+($listUsers->currentPage()-1)*$listUsers->perPage() }}</td>
-                                            <td>
-                                                <a href="{{ route('admin.users.show', $user->alias) }}">{{ $user->full_name }}</a>
-                                            </td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ empty($user->phone_number)?'-':$user->phone_number }}</td>
-                                            <td>{{ empty($user->address)?'-':$user->address }}</td>
-                                            <td>{{\App\Models\User::$status[$user->status]}}</td>
+                                            <td>{{ $user->phone_number }}</td>
+                                            <td>{{ $user->name }}</td>
                                             <td>
                                                 <div class="action-buttons">
-                                                    <a class="red" href="#" title="{{__('messages.Delete')}}">
+                                                    <a href="{{route('admin.users.edit', $user->alias)}}" class="info" >
+                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                    </a>
+                                                    <a class="red" onclick="confirmDeleteData(this,'{{__('messages.MessageConfirmDelete')}}')" title="{{__('messages.Delete')}}" href="javascript:void(0)" data-url="{{route('admin.users.destroy', $user->alias)}}">
                                                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                     </a>
                                                 </div>

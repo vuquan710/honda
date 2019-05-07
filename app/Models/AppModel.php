@@ -124,5 +124,20 @@ class AppModel extends Authenticatable
         return @$item->{$field};
 
     }
+    public static function findByAliasJoin($alias, $field = null)
+    {
+        $item = self::leftJoin('cities','users.city','=','cities.vehicle_id')->where('alias', '=', $alias)->first();
+
+        if (!$item) {
+            return null;
+        }
+
+        if (!$field) {
+            return $item;
+        }
+
+        return @$item->{$field};
+
+    }
 
 }

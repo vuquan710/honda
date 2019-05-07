@@ -14,6 +14,7 @@ namespace App\Http\Middleware;
 use App\Models\Setting;
 use Closure;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class UserMiddleware
@@ -27,13 +28,18 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-      	 if (Session::has('User.language') && in_array(Session::get('User.language'),['vi','en'])) {
-            $language = Session::get('User.language');
+        if (Auth::guard('users')->check()) {
+            if (Session::has('User.language') && in_array(Session::get('User.language'),['vi','en'])) {
+                $language = Session::get('User.language');
+            } else {
+                $language = Setting::getLanguage();
+            }
+            App::setLocale($language);
+            return $next($request);
         } else {
-            $language = Setting::getLanguage();
+            return redirect()->route('user.auth.login');
         }
-        App::setLocale($language);
-        return $next($request);
+
     }
 
 }
