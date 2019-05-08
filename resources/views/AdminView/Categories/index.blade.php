@@ -31,10 +31,10 @@
                                 <tr>
                                     <th class="text-center" width="1%">#</th>
                                     <th class="">{{__('messages.Name_Category')}}&nbsp;({{__('messages.VI')}})</th>
-                                    <th class="">{{__('messages.Name_Category')}}&nbsp;({{__('messages.EN')}})</th>
+                                    {{--<th class="">{{__('messages.Name_Category')}}&nbsp;({{__('messages.EN')}})</th>--}}
                                     <th width="25%">{{__('messages.Description')}}&nbsp;({{__('messages.VI')}})</th>
-                                    <th width="25%">{{__('messages.Description')}}&nbsp;({{__('messages.EN')}})</th>
-                                    <th width="10%">{{__('messages.ImageBanner')}}</th>
+                                    {{--<th width="25%">{{__('messages.Description')}}&nbsp;({{__('messages.EN')}})</th>--}}
+                                    {{--<th width="10%">{{__('messages.ImageBanner')}}</th>--}}
                                     <th width="60px"></th>
                                 </tr>
                                 </thead>
@@ -44,12 +44,12 @@
                                     <tr>
                                         <td>{{$key+1}}</td>
                                         <td>{{@$category['text_name']}}{{ method_field('PUT') }}</td>
-                                        <td>{{@$category['en_text_name']}}</td>
+                                        {{--<td>{{@$category['en_text_name']}}</td>--}}
                                         <td>{{@$category['description']}}</td>
-                                        <td>{{@$category['en_description']}}</td>
-                                        <td>@if(!empty($category['url_banner']))<img width="100px"
-                                                                                     src="{{asset($category['url_banner'])}}"/>@endif
-                                        </td>
+                                        {{--<td>{{@$category['en_description']}}</td>--}}
+                                        {{--<td>@if(!empty($category['url_banner']))<img width="100px"--}}
+                                                                                     {{--src="{{asset($category['url_banner'])}}"/>@endif--}}
+                                        {{--</td>--}}
                                         <td class="text-center">
                                             <div class="action-buttons">
                                                 <a href="{{route('admin.categories.edit', $category['id'])}}"

@@ -39,17 +39,17 @@
                                                 class="hidden-xs">&nbsp;{{__('messages.Setting')}}</label>&nbsp;{{__('messages.General')}}
                                     </a>
                                 </li>
-                                <li role="presentation"><a href="#product-attribute" aria-controls="profile" role="tab"
-                                                           data-toggle="tab"><i
-                                                class="fa fa-pencil-square-o font-18"></i><label
-                                                class="hidden-xs">&nbsp;{{__('messages.Setting')}}</label>&nbsp;{{__('messages.Attributes')}}
-                                    </a>
-                                </li>
-                                <li role="presentation"><a href="#product-image" aria-controls="product-image"
-                                                           role="tab"
-                                                           data-toggle="tab"><i class="fa fa-image font-18"></i><label
-                                                class="hidden-xs">&nbsp;{{__('messages.Setting')}}</label>&nbsp;{{__('messages.Images')}}
-                                    </a></li>
+                                {{--<li role="presentation"><a href="#product-attribute" aria-controls="profile" role="tab"--}}
+                                                           {{--data-toggle="tab"><i--}}
+                                                {{--class="fa fa-pencil-square-o font-18"></i><label--}}
+                                                {{--class="hidden-xs">&nbsp;{{__('messages.Setting')}}</label>&nbsp;{{__('messages.Attributes')}}--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li role="presentation"><a href="#product-image" aria-controls="product-image"--}}
+                                                           {{--role="tab"--}}
+                                                           {{--data-toggle="tab"><i class="fa fa-image font-18"></i><label--}}
+                                                {{--class="hidden-xs">&nbsp;{{__('messages.Setting')}}</label>&nbsp;{{__('messages.Images')}}--}}
+                                    {{--</a></li>--}}
                             </ul>
 
                             <div class="tab-content">
@@ -59,7 +59,7 @@
                                         <div class="col-lg-6 col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="name"
-                                                       class="col-sm-4 control-label">{{__('messages.Name')}}&nbsp;({{__('messages.VI')}})&nbsp;<span
+                                                       class="col-sm-4 control-label">Tên Đặt Hàng&nbsp;<span
                                                             class="red">(*)</span></label>
                                                 <div class="col-sm-8">
                                                     <input type="text" name="name" required class="form-control"
@@ -70,7 +70,7 @@
                                         <div class="col-lg-6 col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="product_code"
-                                                       class="col-sm-2 control-label">{{__('messages.Code')}}&nbsp;<span
+                                                       class="col-sm-2 control-label">Mã Gốc<span
                                                             class="red">(*)</span></label>
                                                 <div class="col-sm-10">
                                                     <input type="text" name="product_code" class="form-control" required
@@ -78,23 +78,59 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {{--<div class="col-lg-6 col-md-6 col-sm-6">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label for="en_name"--}}
+                                                       {{--class="col-sm-4 control-label">{{__('messages.Name')}}&nbsp;({{__('messages.EN')}})&nbsp;<span--}}
+                                                            {{--class="red">(*)</span></label>--}}
+                                                {{--<div class="col-sm-8">--}}
+                                                    {{--<input type="text" name="en_name" class="form-control" required--}}
+                                                           {{--id="en_name">--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    </div>
+
+                                    <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6">
                                             <div class="form-group">
-                                                <label for="en_name"
-                                                       class="col-sm-4 control-label">{{__('messages.Name')}}&nbsp;({{__('messages.EN')}})&nbsp;<span
+                                                <label for="name"
+                                                       class="col-sm-4 control-label">Tên Đăng Xuất&nbsp;<span
                                                             class="red">(*)</span></label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="en_name" class="form-control" required
-                                                           id="en_name">
+                                                    <input type="text" name="name_checkout" required class="form-control"
+                                                           id="name_checkout">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="product_code_fake"
+                                                       class="col-sm-2 control-label">Mã Mới<span
+                                                            class="red">(*)</span></label>
+                                                <div class="col-sm-10">
+                                                    <input readonly type="text" name="product_code_fake" class="form-control" required
+                                                           id="product_code_fake">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group">
                                         <label for="price"
-                                               class="col-sm-2 col-xs-2 control-label">{{__('messages.Price')}}</label>
+                                               class="col-sm-2 col-xs-2 control-label">Giá Gốc</label>
                                         <div class="col-sm-2 col-xs-6">
                                             <input type="number" name="price" id="price" class="form-control" min="0"/>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="price"
+                                               class="col-sm-2 col-xs-2 control-label">Giá Đại Lý C1</label>
+                                        <div class="col-sm-2 col-xs-6">
+                                            <input type="number" name="price_agency1" id="price" class="form-control" min="0"/>
                                         </div>
                                         <div class="col-sm-2 col-xs-4">
                                             <select name="unit" class="form-control select2" style="width: 100%">
@@ -104,14 +140,25 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="quantity"
-                                               class="col-sm-2 col-xs-2 control-label">{{__('messages.Quantity')}}</label>
+                                        <label for="price"
+                                               class="col-sm-2 col-xs-2 control-label">Giá Đại Lý C2</label>
                                         <div class="col-sm-2 col-xs-6">
-                                            <input type="number" name="quantity" id="quantity" class="form-control"
-                                                   min="0" value="1"/>
+                                            <input type="number" name="price_agency2" id="price" class="form-control" min="0"/>
                                         </div>
+
                                     </div>
+
+
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="quantity"--}}
+                                               {{--class="col-sm-2 col-xs-2 control-label">{{__('messages.Quantity')}}</label>--}}
+                                        {{--<div class="col-sm-2 col-xs-6">--}}
+                                            {{--<input type="number" name="quantity" id="quantity" class="form-control"--}}
+                                                   {{--min="0" value="1"/>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="form-group">
                                         <label for="p_vendor_id"
                                                class="col-sm-2 col-xs-2 control-label">{{__('messages.Vendors')}}</label>
@@ -155,73 +202,73 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="short_description"
-                                               class="col-sm-2 control-label">{{__('messages.Short_Description')}}&nbsp;({{__('messages.VI')}})</label>
-                                        <div class="col-sm-10">
-                                            <textarea type="number" name="short_description" id="short_description" maxlength="255"
-                                                      class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="en_short_description"
-                                               class="col-sm-2 control-label">{{__('messages.Short_Description')}}&nbsp;({{__('messages.EN')}})</label>
-                                        <div class="col-sm-10">
-                                            <textarea type="number" name="en_short_description" id="en_short_description" maxlength="255"
-                                                      class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="description"
-                                               class="col-sm-2 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.VI')}})</label>
-                                        <div class="col-sm-10">
-                                            <textarea type="number" name="description" id="description"
-                                                      class="form-control editor"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="en_description"
-                                               class="col-sm-2 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.EN')}})</label>
-                                        <div class="col-sm-10">
-                                            <textarea type="number" name="en_description" id="en_description"
-                                                      class="form-control editor"></textarea>
-                                        </div>
-                                    </div>
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="short_description"--}}
+                                               {{--class="col-sm-2 control-label">{{__('messages.Short_Description')}}&nbsp;({{__('messages.VI')}})</label>--}}
+                                        {{--<div class="col-sm-10">--}}
+                                            {{--<textarea type="number" name="short_description" id="short_description" maxlength="255"--}}
+                                                      {{--class="form-control"></textarea>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="en_short_description"--}}
+                                               {{--class="col-sm-2 control-label">{{__('messages.Short_Description')}}&nbsp;({{__('messages.EN')}})</label>--}}
+                                        {{--<div class="col-sm-10">--}}
+                                            {{--<textarea type="number" name="en_short_description" id="en_short_description" maxlength="255"--}}
+                                                      {{--class="form-control"></textarea>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="description"--}}
+                                               {{--class="col-sm-2 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.VI')}})</label>--}}
+                                        {{--<div class="col-sm-10">--}}
+                                            {{--<textarea type="number" name="description" id="description"--}}
+                                                      {{--class="form-control editor"></textarea>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="en_description"--}}
+                                               {{--class="col-sm-2 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.EN')}})</label>--}}
+                                        {{--<div class="col-sm-10">--}}
+                                            {{--<textarea type="number" name="en_description" id="en_description"--}}
+                                                      {{--class="form-control editor"></textarea>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="row">
-                                        <div class="col-sm-offset-2 col-sm-2">
-                                            <div class="form-group">
-                                                <label class="col-sm-12">
-                                                    <input name="is_show" type="checkbox" class="ace" checked value="1">
-                                                    <span class="lbl">{{__('messages.Show')}}</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <div class="form-group">
-                                                <label class="col-sm-12">
-                                                    <input name="is_new" type="checkbox" checked value="1"
-                                                           class="ace">
-                                                    <span class="lbl">{{__('messages.New')}}</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label class="col-sm-12">
-                                                    <input name="is_sale" type="checkbox" class="ace" value="1"
-                                                           onchange="displayTarget(this)"
-                                                           target-display="#price_sale">
-                                                    <span class="lbl">{{__('messages.Sale_Off')}}</span>
-                                                </label>
-                                                <div class="col-sm-12">
-                                                    <input type="number" id="price_sale" name="price_sale" min="0"
-                                                           class="form-control hidden"
-                                                           placeholder="{{__('messages.New_Price')}}"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-sm-offset-2 col-sm-2">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-sm-12">--}}
+                                                    {{--<input name="is_show" type="checkbox" class="ace" checked value="1">--}}
+                                                    {{--<span class="lbl">{{__('messages.Show')}}</span>--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-sm-2">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-sm-12">--}}
+                                                    {{--<input name="is_new" type="checkbox" checked value="1"--}}
+                                                           {{--class="ace">--}}
+                                                    {{--<span class="lbl">{{__('messages.New')}}</span>--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-sm-6">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-sm-12">--}}
+                                                    {{--<input name="is_sale" type="checkbox" class="ace" value="1"--}}
+                                                           {{--onchange="displayTarget(this)"--}}
+                                                           {{--target-display="#price_sale">--}}
+                                                    {{--<span class="lbl">{{__('messages.Sale_Off')}}</span>--}}
+                                                {{--</label>--}}
+                                                {{--<div class="col-sm-12">--}}
+                                                    {{--<input type="number" id="price_sale" name="price_sale" min="0"--}}
+                                                           {{--class="form-control hidden"--}}
+                                                           {{--placeholder="{{__('messages.New_Price')}}"/>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane" id="product-attribute">

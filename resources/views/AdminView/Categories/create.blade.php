@@ -32,24 +32,25 @@
                                     <input type="text" name="name" id="name" required class="form-control" autofocus placeholder="" value="{{old('name')}}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="en_name" class="col-sm-4 col-xs-12 control-label">{{__('messages.Name_Category')}}&nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>
-                                <div class="col-sm-8 col-xs-12">
-                                    <input type="text" name="en_name" id="en_name" required class="form-control" autofocus placeholder="" value="{{old('en_name')}}">
-                                </div>
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="en_name" class="col-sm-4 col-xs-12 control-label">{{__('messages.Name_Category')}}&nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>--}}
+                                {{--<div class="col-sm-8 col-xs-12">--}}
+                                    {{--<input type="text" name="en_name" id="en_name" required class="form-control" autofocus placeholder="" value="{{old('en_name')}}">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <label for="description" class="col-sm-4 col-xs-12 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.VI')}})&nbsp;<span class="red">(*)</span></label>
                                 <div class="col-sm-8 col-xs-12">
                                     <textarea name="description" class="form-control" id="description" required placeholder="">{{old('description')}}</textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="en_description" class="col-sm-4 col-xs-12 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>
-                                <div class="col-sm-8 col-xs-12">
-                                    <textarea name="en_description" class="form-control" id="en_description" required placeholder="">{{old('en_description')}}</textarea>
-                                </div>
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="en_description" class="col-sm-4 col-xs-12 control-label">{{__('messages.Description')}}&nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>--}}
+                                {{--<div class="col-sm-8 col-xs-12">--}}
+                                    {{--<textarea name="en_description" class="form-control" id="en_description" required placeholder="">{{old('en_description')}}</textarea>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+
                             <div class="form-group">
                                 <label class="col-sm-4 col-xs-12 control-label">
                                     {{__('messages.Parent')}}
@@ -64,26 +65,27 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 col-xs-12 control-label">
-                                    {{__('messages.ImageBanner')}}
-                                </label>
-                                <div class="col-sm-8 col-xs-12">
-                                    <div class="text-left">
-                                        <label class="ace-file-input">
-                                            <input type="file" name="url_banner"
-                                                   accept="image/x-png,image/gif,image/jpeg"
-                                                   onchange="chooseImage(this)">
-                                            <span class="ace-file-container" data-title="{{__('messages.Choose')}}">
-                                                            <span class="ace-file-name" data-title="{{__('messages.No_file_choose')}}..."
-                                                                  data-old-title="{{__('messages.No_file_choose')}}...">
-                                                                <i class=" ace-icon fa fa-upload"></i>
-                                                            </span>
-                                                        </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+
+                            {{--<div class="form-group">--}}
+                                {{--<label class="col-sm-4 col-xs-12 control-label">--}}
+                                    {{--{{__('messages.ImageBanner')}}--}}
+                                {{--</label>--}}
+                                {{--<div class="col-sm-8 col-xs-12">--}}
+                                    {{--<div class="text-left">--}}
+                                        {{--<label class="ace-file-input">--}}
+                                            {{--<input type="file" name="url_banner"--}}
+                                                   {{--accept="image/x-png,image/gif,image/jpeg"--}}
+                                                   {{--onchange="chooseImage(this)">--}}
+                                            {{--<span class="ace-file-container" data-title="{{__('messages.Choose')}}">--}}
+                                                            {{--<span class="ace-file-name" data-title="{{__('messages.No_file_choose')}}..."--}}
+                                                                  {{--data-old-title="{{__('messages.No_file_choose')}}...">--}}
+                                                                {{--<i class=" ace-icon fa fa-upload"></i>--}}
+                                                            {{--</span>--}}
+                                                        {{--</span>--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-xs-12 col-sm-8">
                                     <button type="submit" class="btn btn-success btn-sm">{{__('messages.Save')}}</button>

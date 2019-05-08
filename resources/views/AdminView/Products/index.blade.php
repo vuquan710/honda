@@ -84,11 +84,14 @@
                                         </label>
                                     </th>
                                     <th class="">#</th>
-                                    <th class="">{{__('messages.Name').'/'.__('messages.Code')}}</th>
-                                    <th>{{__('messages.Short_Description')}}</th>
-                                    <th class="">{{__('messages.Price')}}</th>
-                                    <th class="">{{__('messages.Unit')}}</th>
-                                    <th class="">{{__('messages.Quantity')}}</th>
+                                    <th class="">Tên Đặt Hàng</th>
+                                    <th class="">Tên Đăng Xuất</th>
+                                    <th class="">Mã Gốc</th>
+                                    <th class="">Mã Mới</th>
+                                    <th class="">Giá Gốc</th>
+                                    <th class="">Giá Đại Lý Cấp 1</th>
+                                    <th class="">Giá Đại Lý Cấp 2</th>
+                                    <th class="">Đơn Giá</th>
                                     <th width="60px"></th>
                                 </tr>
                                 </thead>
@@ -105,13 +108,17 @@
                                             </td>
                                             <td>{{ ($key+1)+($listProducts->currentPage()-1)*$listProducts->perPage() }}</td>
                                             <td>
-                                                <a href="{{ route('admin.products.show', $product->alias) }}">{{ $product->name }}
-                                                    &nbsp;({{$product->product_code}})</a>
+                                                {{--<a href="{{ route('admin.products.show', $product->alias) }}">{{ $product->name }}--}}
+                                                    {{--&nbsp;</a>--}}
+                                              {{ $product->name }}
                                             </td>
-                                            <td>{{ $product->short_description }}</td>
+                                            <td>{{$product->name_checkout}}</td>
+                                            <td>{{$product->product_code}}</td>
+                                            <td>{{ $product->product_code_fake }}</td>
                                             <td>{{ empty($product->price)?0: $product->price}}</td>
+                                            <td>{{ empty($product->price_agency1)?0: $product->price_agency1}}</td>
+                                            <td>{{ empty($product->price_agency2)?0: $product->price_agency2}}</td>
                                             <td>{{\App\Models\Product::$unit[$product->unit]}}</td>
-                                            <td>{{ empty($product->quantity)?0: $product->quantity}}</td>
                                             <td class="text-center">
                                                 <div class="action-buttons">
                                                     <a href="{{route('admin.products.edit', $product->alias)}}"

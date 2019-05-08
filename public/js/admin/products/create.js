@@ -64,6 +64,12 @@ $(document).ready(function () {
         reIndexTable('#table-list-option');
         $('.select2').select2();
     })
+
+    $("#product_code").on('change', function(){
+      $("#product_code_fake").val(btoa($(this).val()));
+    });
+
+
 });
 
 function reIndexTable(table) {

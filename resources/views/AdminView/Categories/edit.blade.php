@@ -39,16 +39,16 @@
                                            value="{{!empty(old('name'))?old('name'):@$category['name']}}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="en_name"
-                                       class="col-sm-4 col-xs-12 control-label">{{__('messages.Name_Category')}}
-                                    &nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>
-                                <div class="col-sm-8 col-xs-12">
-                                    <input type="text" id="en_name" name="en_name" autofocus class="form-control"
-                                           placeholder="" required
-                                           value="{{!empty(old('en_name'))?old('en_name'):@$category['en_name']}}">
-                                </div>
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="en_name"--}}
+                                       {{--class="col-sm-4 col-xs-12 control-label">{{__('messages.Name_Category')}}--}}
+                                    {{--&nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>--}}
+                                {{--<div class="col-sm-8 col-xs-12">--}}
+                                    {{--<input type="text" id="en_name" name="en_name" autofocus class="form-control"--}}
+                                           {{--placeholder="" required--}}
+                                           {{--value="{{!empty(old('en_name'))?old('en_name'):@$category['en_name']}}">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <label for="description"
                                        class="col-sm-4 col-xs-12 control-label">{{__('messages.Description')}}
@@ -58,15 +58,15 @@
                                               placeholder="">{{!empty(old('description'))?old('description'):@$category['description']}}</textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="en_description"
-                                       class="col-sm-4 col-xs-12 control-label">{{__('messages.Description')}}
-                                    &nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>
-                                <div class="col-sm-8 col-xs-12">
-                                    <textarea name="en_description" class="form-control" id="en_description" required
-                                              placeholder="">{{!empty(old('en_description'))?old('en_description'):@$category['en_description']}}</textarea>
-                                </div>
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="en_description"--}}
+                                       {{--class="col-sm-4 col-xs-12 control-label">{{__('messages.Description')}}--}}
+                                    {{--&nbsp;({{__('messages.EN')}})&nbsp;<span class="red">(*)</span></label>--}}
+                                {{--<div class="col-sm-8 col-xs-12">--}}
+                                    {{--<textarea name="en_description" class="form-control" id="en_description" required--}}
+                                              {{--placeholder="">{{!empty(old('en_description'))?old('en_description'):@$category['en_description']}}</textarea>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <label class="col-sm-4 col-xs-12 control-label">
                                     {{__('messages.Parent')}}
@@ -89,32 +89,32 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 col-xs-12 control-label">
-                                    {{__('messages.ImageBanner')}}
-                                </label>
-                                <div class="col-sm-8 col-xs-12">
-                                    <div class="text-left">
-                                        <label class="ace-file-input">
-                                            <input type="hidden" class="old-image"
-                                                   data-url="{{asset($category['url_banner'])}}"
-                                                   name="old_image"
-                                                   value="{{str_replace($dirImage,'',$category['url_banner'])}}"/>
-                                            <input type="file" name="url_banner"
-                                                   accept="image/x-png,image/gif,image/jpeg"
-                                                   onchange="chooseImage(this)">
-                                            <span class="ace-file-container"
-                                                  data-title="{{__('messages.Choose')}}">
-                                                            <span class="ace-file-name"
-                                                                  data-title="{{str_replace($dirImage,'',$category['url_banner'])}}"
-                                                                  data-old-title="{{str_replace($dirImage,'',$category['url_banner'])}}">
-                                                                <i class=" ace-icon fa fa-upload"></i>
-                                                            </span>
-                                                        </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label class="col-sm-4 col-xs-12 control-label">--}}
+                                    {{--{{__('messages.ImageBanner')}}--}}
+                                {{--</label>--}}
+                                {{--<div class="col-sm-8 col-xs-12">--}}
+                                    {{--<div class="text-left">--}}
+                                        {{--<label class="ace-file-input">--}}
+                                            {{--<input type="hidden" class="old-image"--}}
+                                                   {{--data-url="{{asset($category['url_banner'])}}"--}}
+                                                   {{--name="old_image"--}}
+                                                   {{--value="{{str_replace($dirImage,'',$category['url_banner'])}}"/>--}}
+                                            {{--<input type="file" name="url_banner"--}}
+                                                   {{--accept="image/x-png,image/gif,image/jpeg"--}}
+                                                   {{--onchange="chooseImage(this)">--}}
+                                            {{--<span class="ace-file-container"--}}
+                                                  {{--data-title="{{__('messages.Choose')}}">--}}
+                                                            {{--<span class="ace-file-name"--}}
+                                                                  {{--data-title="{{str_replace($dirImage,'',$category['url_banner'])}}"--}}
+                                                                  {{--data-old-title="{{str_replace($dirImage,'',$category['url_banner'])}}">--}}
+                                                                {{--<i class=" ace-icon fa fa-upload"></i>--}}
+                                                            {{--</span>--}}
+                                                        {{--</span>--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-xs-12 col-sm-8">
                                     <button type="submit"

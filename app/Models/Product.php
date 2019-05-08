@@ -22,8 +22,8 @@ class Product extends AppModel
         'name', 'short_description', 'description'
     ];
     protected $fillable = [
-        'alias', 'p_category_id', 'p_vendor_id', 'product_code', 'name', 'is_new', 'is_sale', 'is_show',
-        'price', 'price_sale', 'unit', 'quantity', 'short_description', 'description', 'en_name', 'en_short_description', 'en_description', 'image_main_url',
+        'alias', 'p_category_id', 'p_vendor_id', 'product_code', 'product_code_fake', 'name', 'name_checkout', 'is_new', 'is_sale', 'is_show',
+        'price', 'price_sale', 'price_agency1', 'price_agency2', 'unit', 'quantity', 'short_description', 'description', 'en_name', 'en_short_description', 'en_description', 'image_main_url',
         'slug'
     ];
 
@@ -47,8 +47,7 @@ class Product extends AppModel
 
     public static function getListProducts($page = 1, $limit = 10, $dataSearch)
     {
-        $products = self::select('id', 'alias', 'p_category_id', 'p_vendor_id', 'product_code', 'name', 'is_new', 'is_sale', 'is_show',
-            'price', 'price_sale', 'unit', 'quantity', 'short_description', 'description', 'en_name', 'en_short_description', 'en_description', 'image_main_url')
+        $products = self::select('*')
             ->whereNull('deleted_at')
             ->with(['Images' => function ($q) {
                 $q->select('id as id_image', 'p_product_id', 'url_thumb', 'description', 'is_show', 'is_main')
@@ -150,8 +149,7 @@ class Product extends AppModel
 
     public static function getDetailProductByAlias($alias)
     {
-        $product = self::select('id', 'alias', 'p_category_id', 'p_vendor_id', 'product_code', 'name', 'is_new', 'is_sale', 'is_show',
-            'price', 'price_sale', 'unit', 'quantity', 'short_description', 'description', 'en_name', 'en_short_description', 'en_description', 'image_main_url')
+        $product = self::select('*')
             ->where('alias', $alias)
             ->whereNull('deleted_at')
             ->with(['Images' => function ($q) {

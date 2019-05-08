@@ -59,13 +59,14 @@ class ProductsController extends AdminAppController
     public function store(Request $request)
     {
         $dataValidate = $request->all();
+
         $validator = Validator::make($dataValidate, [
             'name' => 'required|max:255',
             'product_code' => 'required|max:255',
             'p_category_id' => 'required',
             'price' => 'min:0',
-            'quantity' => 'min:0',
-            'price_sale' => 'min:0',
+//            'quantity' => 'min:0',
+//            'price_sale' => 'min:0',
         ]);
 
         if ($validator->fails()) {
@@ -79,19 +80,23 @@ class ProductsController extends AdminAppController
             'p_category_id' => $request['p_category_id'],
             'p_vendor_id' => $request['p_vendor_id'],
             'product_code' => $request['product_code'],
+            'product_code_fake' => $request['product_code_fake'],
             'name' => $request['name'],
-            'en_name' => $request['en_name'],
+            'name_checkout' => $request['name_checkout'],
+//            'en_name' => $request['en_name'],
             'is_new' => !empty($request['is_new']) ? 1 : 0,
             'is_sale' => !empty($request['is_sale']) ? 1 : 0,
             'is_show' => !empty($request['is_show']) ? 1 : 0,
             'price' => $request['price'],
-            'price_sale' => $request['price_sale'],
+            'price_agency1' => $request['price_agency1'],
+            'price_agency2' => $request['price_agency2'],
+//            'price_sale' => $request['price_sale'],
             'unit' => $request['unit'],
-            'quantity' => $request['quantity'],
-            'short_description' => $request['short_description'],
-            'en_short_description' => $request['en_short_description'],
-            'en_description' => $request['en_description'],
-            'description' => $request['description'],
+//            'quantity' => $request['quantity'],
+//            'short_description' => $request['short_description'],
+//            'en_short_description' => $request['en_short_description'],
+//            'en_description' => $request['en_description'],
+//            'description' => $request['description'],
 
         ];
         try {
@@ -225,12 +230,12 @@ class ProductsController extends AdminAppController
         $dataValidate = $request->all();
         $validator = Validator::make($dataValidate, [
             'name' => 'required|max:255',
-            'en_name' => 'required|max:255',
+//            'en_name' => 'required|max:255',
             'product_code' => 'required|max:255',
             'p_category_id' => 'required',
             'price' => 'min:0',
-            'quantity' => 'min:0',
-            'price_sale' => 'min:0',
+//            'quantity' => 'min:0',
+//            'price_sale' => 'min:0',
         ]);
 
         if ($validator->fails()) {
@@ -243,20 +248,23 @@ class ProductsController extends AdminAppController
             'p_category_id' => $request['p_category_id'],
             'p_vendor_id' => $request['p_vendor_id'],
             'product_code' => $request['product_code'],
+            'product_code_fake' => $request['product_code_fake'],
             'name' => $request['name'],
-            'en_name' => $request['en_name'],
+            'name_checkout' => $request['name_checkout'],
+//            'en_name' => $request['en_name'],
             'is_new' => !empty($request['is_new']) ? 1 : 0,
             'is_sale' => !empty($request['is_sale']) ? 1 : 0,
             'is_show' => !empty($request['is_show']) ? 1 : 0,
             'price' => $request['price'],
-            'price_sale' => $request['price_sale'],
+            'price_agency1' => $request['price_agency1'],
+            'price_agency2' => $request['price_agency2'],
+//            'price_sale' => $request['price_sale'],
             'unit' => $request['unit'],
-            'quantity' => $request['quantity'],
-            'short_description' => $request['short_description'],
-            'en_short_description' => $request['en_short_description'],
-            'description' => $request['description'],
-            'en_description' => $request['en_description'],
-
+//            'quantity' => $request['quantity'],
+//            'short_description' => $request['short_description'],
+//            'en_short_description' => $request['en_short_description'],
+//            'en_description' => $request['en_description'],
+//            'description' => $request['description'],
         ];
         try {
             DB::begintransaction();
@@ -321,7 +329,7 @@ class ProductsController extends AdminAppController
                 ->withErrors(['message' => $e->getMessage()])
                 ->withInput();
         }
-        return redirect()->route('admin.products.show', $alias);
+        return redirect()->route('admin.products.index', $alias);
     }
 
     private function saveAndCreateImageThumb($images = [])
