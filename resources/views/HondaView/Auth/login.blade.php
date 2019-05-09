@@ -4,23 +4,20 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-6 col-lg-6 col-md-push-3 col-lg-push-3 text-center">
-            <h1>Honda Login</h1>
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-md-6 col-lg-6 col-md-push-3 col-lg-push-3">
+        <div class="col-md-6 col-lg-6 col-md-push-3 col-lg-push-3 tg-form">
+            <h1>Login</h1>
             <form method="POST" action="{!! route('user.auth.login') !!}" class="form-horizontal form-login">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
                     <div class="col-sm-10">
-                        <input type="email" name="email" class="form-control" autofocus placeholder="Email">
+                        <input type="email" name="email" class="form-control" autofocus >
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                     <div class="col-sm-10">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" >
                     </div>
                 </div>
                 <div class="form-group">
@@ -28,6 +25,7 @@
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="remember" value="1"> Remember me
+                                <span></span>
                             </label>
                         </div>
                     </div>

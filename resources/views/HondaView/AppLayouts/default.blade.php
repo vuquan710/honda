@@ -31,15 +31,18 @@
     @yield('css')
 
 </head>
-<body class="admin-layout no-skin">
+<body class="admin-layout no-skin tg-customer-search">
 {{--@widget('UserNavBar')--}}
 @section('sidebar')
 @show
-<div class="container ace-save-state" id="main-container">
+<div class="wrap-customer-search">
+  <div class="container ace-save-state" id="main-container">
 {{--    @include('AdminView.Share.sidebarAdmin')--}}
     @yield('content')
     {{--@include('AdminView.Share.footer')--}}
+</div>  
 </div>
+
 <script src="{!! URL::asset('js/jquery-3.2.1.min.js') !!}"></script>
 <script src="{!! URL::asset('js/translate/jquery.i18n.language.js') !!}"></script>
 @if(\App::getLocale()==\App\Models\Setting::LANG_EN)

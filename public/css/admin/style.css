@@ -1,10 +1,6 @@
-.admin-layout .form-login {
-    background-color: #fff;
-    padding: 20px;
-    border-top: 5px solid #33b5e5;
-    margin-top: 20px;
+:hover, :focus{
+    outline: none !important;
 }
-
 .admin-layout .pagination {
     margin: 0;
 }
@@ -58,3 +54,121 @@
 table tr td.valign-middle {
     vertical-align: middle;
 }
+
+/* CSS LOGIN LAYOUT */
+.tg-login-layout{
+    background: url(../../img/base/honda_bg.jpg) no-repeat;
+    background-size: cover;
+}
+.tg-login-layout h1{
+    text-transform: uppercase;
+    color: #d8c926;
+    font-weight: 700;
+    text-align: center;
+    margin: 2em 0px 1em 0px;
+    text-shadow: 4px 3px 9px #cc2f21;
+}
+.tg-login-layout .alert-danger {
+    color: #fff;
+    background-color: #100503;
+    border-color: #100503;
+}
+.tg-login-layout .alert ul li {
+    color:#fff;
+}
+
+.tg-login-layout button[class="close"] span{
+    color:#fff !important;
+    opacity: 1 !important;
+}
+.tg-login-layout .close:focus, .tg-login-layout .close:hover{
+    opacity: 1 !important;
+}
+.tg-form .form-group label{
+    color:#fff;
+    font-size: 15px;
+    position: relative;
+}
+.tg-form input[type="email"]:focus , .tg-form input[type="password"]:focus{
+  border-color: #ffffff !important;
+  outline: 0 !important;
+  -webkit-box-shadow: 0px 0px 15px #fff;
+  box-shadow: 0px 0px 15px #fff;
+}
+.tg-form input[type="email"] , .tg-form input[type="password"] {
+    background:none !important;
+    border:1px solid #fff;
+    border-radius: 3px;
+    padding: 8px !important;
+    height: initial !important;
+    color: #fff;
+    font-size: 14px;
+    -webkit-box-shadow: 0px 0px 0px #fff;
+  box-shadow: 0px 0px 0px #fff;
+    transition: all 0.3s linear;
+}
+.tg-form .checkbox span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.tg-form .checkbox span::before{
+    content:"";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: none;
+    border:1px solid #fff;
+    top: 2px;
+        -webkit-box-shadow: 0px 0px 0px #fff;
+  box-shadow: 0px 0px 0px #fff;
+    transition: all 0.3s linear;
+}
+.tg-form .checkbox input[type="checkbox"]{
+    display: none;
+}
+.tg-form  input:checked+span::after{
+    position: absolute;
+    content: "\f00c";
+    font: normal normal normal 14px/1 FontAwesome;
+    color: #fff;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 3px;
+    left: 0px;
+    /* background: #fff; */
+    top: 3px;
+    background: none;
+    font-size: 11px;
+}
+.tg-form  input:checked+span::before{
+      -webkit-box-shadow: 0px 0px 15px #fff;
+  box-shadow: 0px 0px 15px #fff;
+}
+.tg-form .checkbox label{
+    padding:0px 0px 0px 25px;
+}
+.tg-form button[type="submit"]{
+    background: #200e04;
+    background-image: linear-gradient(to left, #200e04 0%, #200e04 50%, #6d6b68 50%, #200e04);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all 0.3s;
+    color:#fff;
+    border:1px solid #fff;
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.tg-form button[type="submit"]:hover{
+    background-position: 0 0;
+}
+.tg-customer-order{
+    
+}
+/* END CSS LOGIN LAYOUT */

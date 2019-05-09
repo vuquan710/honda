@@ -2,8 +2,70 @@ body {
     background: #ffffff;
     padding: 0;
     margin: 0;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 table tr {
     cursor: pointer;
 }
+
+.tg-customer-search{
+    background: url(../../../img/base/bg_smallhonda.jpg) no-repeat;
+    background-size: cover;
+}
+.tg-customer-search .wrap-customer-search{
+	margin: 7em 0em 0em 0em;
+}
+.tg-customer-search .wrap-customer-search label{
+	color:#fff;
+	font-size: 15px !important;
+}
+.wrap-customer-search input[type="text"] {
+    background: none !important;
+    border: 1px solid #fff;
+    border-radius: 3px !important;
+    padding: 9px !important;
+    height: initial !important;
+    color: #fff;
+    font-size: 14px !important;
+    -webkit-box-shadow: 0px 0px 0px #fff;
+    box-shadow: 0px 0px 0px #fff;
+    transition: all 0.3s linear;
+}
+.wrap-customer-search .tg-search{
+	background-color: rgba(255,255,255,0.1) !important;
+	border:1px solid #fff !important;
+	padding: 9px 15px;
+	border-radius: 3px;
+	font-size: 15px;
+}
+ .wrap-customer-search .table > thead > tr{
+ 	background:none !important;
+
+}
+ .wrap-customer-search .table > thead > tr > th{
+ 	color:#fff;
+ 	background:none !important;
+ 	padding: 10px;
+ 	font-size: 15px;
+ }
+  .wrap-customer-search .table tbody td{
+  	color:#fff;
+  	padding:10px;
+  	font-size: 15px;
+  }
+ .wrap-customer-search .table-hover>tbody>tr:hover{
+  	background:rgba(255,255,255,0.3) !important;
+  }
+ .wrap-customer-search .title_top{
+  	color:#fff;
+  	text-transform: uppercase;
+  	font-weight: 700;
+  	margin:0px;
+  	text-align: center;
+  }
+  .wrap-customer-search .box-search{
+  	margin:0px 0px 40px 0px;
+  }
+ 

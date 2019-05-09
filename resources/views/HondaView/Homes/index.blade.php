@@ -9,7 +9,7 @@
     <div class="row">
 
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="box-search" style="margin: 15px 0px;">
+            <div class="box-search">
                 <form method="GET" action="{{route('user.homes.index')}}">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="form-group">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                 <button type="submit"
-                                        class="btn btn-primary btn-sm">{{__('messages.Search')}}</button>
+                                        class="btn btn-primary btn-sm tg-search">{{__('messages.Search')}}</button>
                             </div>
                         </div>
                     </div>
@@ -96,14 +96,12 @@
                 </table>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="box-search" style="margin: 15px 0px;">
+        <div class="col-lg-6 col-md-6 col-sm-6 tg-customer-order">
+            <div class="box-search">
                 <form method="GET" action="{{route('admin.products.index')}}">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                           <span>Don Hang</span>
+                           <h3 class="title_top">Đơn hàng</h3>
                         </div>
-                    </div>
                 </form>
                 <div class="clearfix"></div>
             </div>

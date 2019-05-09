@@ -13,16 +13,18 @@
     <link rel="stylesheet" href="{!! URL::asset('js/editor/trumbowyg.min.css') !!}"/>
     <link rel="stylesheet" href="{!! URL::asset('css/fashion_font.css') !!}"/>
     <link rel="stylesheet" href="{!! URL::asset('css/app.css') !!}"/>
+    <link rel="stylesheet" href="{!! URL::asset('css/animate.css') !!}"/>
     <link rel="stylesheet" href="{!! URL::asset('css/admin/style.css') !!}"/>
     @yield('css')
     <script type="text/javascript" src="{!! URL::asset('js/jquery-3.2.1.min.js') !!}"></script>
     <script src="{!! URL::asset('js/bootstrap.min.js') !!}"></script>
     <script src="{!! URL::asset('js/editor/trumbowyg.min.js') !!}"></script>
     <script src="{!! URL::asset('js/admin/script.js') !!}"></script>
-
+    <script src="{!! URL::asset('js/wow.min.js') !!}"></script>
+    <script src="{!! URL::asset('js/custom.js') !!}"></script>
     @yield('script')
 </head>
-<body class="admin-layout admin-login-layout" style="background-color: #ffffff">
+<body class="admin-layout admin-login-layout tg-login-layout" style="background-color: #ffffff">
 @section('sidebar')
 @show
 

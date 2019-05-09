@@ -1,18 +1,12 @@
 $(document).ready(function () {
-    $(".owl-carousel").owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayHoverPause: true,
-        animateOut: 'fadeOutDown',
-        animateIn: 'fadeInLeft'
-    });
 
-    $(window).scroll(function () {
-        if ($(document).scrollTop() > 50) {
-            $('.navbar-light').addClass('navbar-fixed-top');
-        }else {
-            $('.navbar-light').removeClass('navbar-fixed-top');
-        }
-    });
+    // var width = $(window).width();
+    // if(width>1100){
+    //     $('.tg-login-layout .form-login').attr({"data-wow-delay" : "0.3s" , "data-wow-duration" : "1s"}).addClass("wow fadeInUp");
+    //     $('.tg-form').attr({"data-wow-delay" : "0.5s" , "data-wow-duration" : "1s"}).addClass("wow fadeInUp");   
+    //     new WOW().init();
+    // }
+    // $('.tg-form button[type="submit"]').click(function(){
+    //     $('.tg-login-layout .form-login').removeClass('fadeInUp');
+    // });
 });
