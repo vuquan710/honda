@@ -17,10 +17,15 @@ class HomesController extends UserAppController
 {
 
     protected $dirView = 'HondaView.Homes.';
-
     public function index(Request $request)
     {
-        return view($this->dirView . 'index');
+        $page = !empty($request['page']) ? $request['page'] : 1;
+        $limit = !empty($request['limit']) ? $request['limit'] : self::LIMIT_DEFAULT_1;
+        $dataSearch = $request['search'];
+        $listProducts = Product::getListProducts($page, $limit, $dataSearch);
+        return view($this->dirView . 'index')
+            ->with('listProducts', $listProducts)
+            ->with('dataSearch', $dataSearch);
     }
 
     public function aboutUs()

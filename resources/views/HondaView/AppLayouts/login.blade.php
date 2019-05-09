@@ -22,7 +22,7 @@
 
     @yield('script')
 </head>
-<body class="admin-layout admin-login-layout">
+<body class="admin-layout admin-login-layout" style="background-color: #ffffff">
 @section('sidebar')
 @show
 

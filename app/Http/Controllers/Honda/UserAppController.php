@@ -17,6 +17,7 @@ class UserAppController extends Controller
 {
     protected $limit = 12;
     protected $page = 1;
+    const LIMIT_DEFAULT_1 = 10;
 
     public function __construct()
     {
