@@ -223,4 +223,8 @@ class Product extends AppModel
     {
         return $this->belongsTo('App\Models\ProductVendor', 'p_vendor_id');
     }
+
+    public static function IsCodeExist ($code) {
+        return self::where('product_code',$code)->whereNull('deleted_at')->first();
+    }
 }

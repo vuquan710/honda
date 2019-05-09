@@ -1,0 +1,9 @@
+body {
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+table tr {
+    cursor: pointer;
+}

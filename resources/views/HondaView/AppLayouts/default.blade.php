@@ -26,16 +26,16 @@
     <!----[endif]-->
     <link rel="stylesheet" href="{!! URL::asset('css/fashion_font.css') !!}"/>
     <link rel="stylesheet" href="{!! URL::asset('css/app.css') !!}"/>
-    <link rel="stylesheet" href="{!! URL::asset('css/admin/style.css') !!}"/>
+    <link rel="stylesheet" href="{!! URL::asset('css/users/honda/style.css') !!}"/>
 
     @yield('css')
 
 </head>
 <body class="admin-layout no-skin">
-@widget('AdminNavBar')
+{{--@widget('UserNavBar')--}}
 @section('sidebar')
 @show
-<div class="main-container ace-save-state" id="main-container">
+<div class="container ace-save-state" id="main-container">
 {{--    @include('AdminView.Share.sidebarAdmin')--}}
     @yield('content')
     {{--@include('AdminView.Share.footer')--}}

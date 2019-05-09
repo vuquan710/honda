@@ -16,6 +16,7 @@ use App\Models\ProductImage;
 use App\Models\ProductOption;
 use App\Models\ProductReview;
 use App\Models\ProductVendor;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -59,6 +60,7 @@ class ProductsController extends AdminAppController
     public function store(Request $request)
     {
         $dataValidate = $request->all();
+        $lang = Setting::getLanguage();
 
         $validator = Validator::make($dataValidate, [
             'name' => 'required|max:255',
@@ -69,11 +71,25 @@ class ProductsController extends AdminAppController
 //            'price_sale' => 'min:0',
         ]);
 
+
         if ($validator->fails()) {
             return redirect()->route('admin.products.create')
                 ->withErrors($validator)
                 ->withInput();
         }
+
+        $isCodeExist = Product::IsCodeExist($request['product_code']);
+
+        if ($isCodeExist) {
+            $mess = 'product_code is already exist';
+            if ($lang == 'vi') {
+                $mess = 'Mã đã tồn tại';
+            }
+            return redirect()->route('admin.products.create')
+                ->withErrors($mess)
+                ->withInput();
+        }
+
 
         $staff = Auth::guard('admin')->user();
         $dataProduct = [
@@ -222,6 +238,7 @@ class ProductsController extends AdminAppController
     public function update(Request $request, $alias)
     {
         $staff = Auth::guard('admin')->user();
+        $lang = Setting::getLanguage();
         $product = Product::findByAlias($alias);
         if (empty($product)) {
             abort(400);
@@ -241,6 +258,19 @@ class ProductsController extends AdminAppController
         if ($validator->fails()) {
             return redirect()->route('admin.products.edit', $alias)
                 ->withErrors($validator)
+                ->withInput();
+        }
+
+
+        $isCodeExist = Product::IsCodeExist($request['product_code']);
+
+        if ($isCodeExist) {
+            $mess = 'Code is already exist';
+            if ($lang == 'vi') {
+                $mess = 'Mã đã tồn tại';
+            }
+            return redirect()->route('admin.products.edit',$alias)
+                ->withErrors($mess)
                 ->withInput();
         }
 
