@@ -57,6 +57,7 @@
                         @foreach($listProducts as $key => $product)
                             <tr data-name="{{$product->name}}"
                                 data-name_checkout="{{$product->name_checkout}}"
+                                data-product_code_fake="{{$product->product_code_fake}}"
                                 data-price_agency1="{{$product->price_agency1}}.{{\App\Models\Product::$unit[$product->unit]}}"
                                 data-toggle="modal" data-target="#myModal"
                               >
@@ -126,10 +127,8 @@
                         {{--<th width="60px"></th>--}}
                     </tr>
                     </thead>
-
                     <tbody>
                             <tr>
-
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -153,10 +152,27 @@
                     <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="info"></div>
+                    <div class="info">
+                        <div>
+                            <span>Tên Đặt Hàng: </span> <span id="name"></span>
+                        </div>
+                        <div>
+                            <span>Tên Đăng Xuất: </span> <span id="name_checkout"></span>
+                        </div>
+                        <div>
+                            <span>Mã: </span> <span id="product_code_fake"></span>
+                        </div>
+                        <div>
+                            <span>Giá: </span> <span id="price_agency1"></span>
+                        </div>
+                        <div>
+                            <span>Số Lượng: 1 </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="submit" class="btn btn-primary" data-dismiss="modal" > OK </button>
                 </div>
             </div>
 
